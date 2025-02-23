@@ -1,4 +1,3 @@
-import React from "react";
 import usePosts from "@/features/blog/hooks/usePosts";
 import { Post } from "@/features/blog/types/types";
 import PostCard from "@/features/blog/components/PostCard";
