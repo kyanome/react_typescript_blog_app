@@ -8,7 +8,7 @@ function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = form;
 
   return (
@@ -21,6 +21,7 @@ function ContactForm() {
               type="text"
               id="name"
               placeholder="お名前を入力してください"
+              disabled={isSubmitting}
               {...register("name", formValidations["name"])}
               error={errors["name"]}
             />
@@ -32,6 +33,7 @@ function ContactForm() {
               type="email"
               id="email"
               placeholder="メールアドレスを入力してください"
+              disabled={isSubmitting}
               {...register("email", formValidations["email"])}
               error={errors["email"]}
             />
@@ -42,6 +44,7 @@ function ContactForm() {
               label="本文"
               id="message"
               placeholder="本文を入力してください"
+              disabled={isSubmitting}
               {...register("message", formValidations["message"])}
               error={errors["message"]}
             />
@@ -51,14 +54,16 @@ function ContactForm() {
         <div className="flex space-x-4 justify-center mt-5">
           <button
             type="submit"
-            className="mt-4 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800"
+            disabled={isSubmitting}
+            className="mt-4 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {"送信"}
+            {isSubmitting ? "送信中..." : "送信"}
           </button>
           <button
             type="button"
             onClick={handleClear}
-            className="mt-4 px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-600 hover:text-white"
+            disabled={isSubmitting}
+            className="mt-4 px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {"クリア"}
           </button>
