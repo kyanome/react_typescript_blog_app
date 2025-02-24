@@ -1,5 +1,9 @@
-import { TextAreaFieldProps } from "./types";
+import { FieldBaseProps } from "./types";
+import { ComponentPropsWithRef } from "react";
 import React from "react";
+
+export type TextAreaFieldProps = ComponentPropsWithRef<"textarea"> &
+  FieldBaseProps;
 
 const TextArea: React.FC<TextAreaFieldProps> = ({
   label,

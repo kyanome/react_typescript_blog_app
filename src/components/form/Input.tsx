@@ -1,4 +1,7 @@
-import { InputFieldProps } from "./types";
+import { FieldBaseProps } from "./types";
+import { ComponentPropsWithRef } from "react";
+
+export type InputFieldProps = ComponentPropsWithRef<"input"> & FieldBaseProps;
 
 const Input: React.FC<InputFieldProps> = ({ label, error, ...props }) => {
   return (

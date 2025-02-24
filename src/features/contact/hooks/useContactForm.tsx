@@ -1,6 +1,18 @@
 import { useForm } from "react-hook-form";
 import { API_BASE_URL } from "../lib/constants";
-import { ContactFormReturn, FormData } from "../types/types";
+import { UseFormReturn } from "react-hook-form";
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type ContactFormReturn = {
+  form: UseFormReturn<FormData>;
+  submitForm: (data: FormData) => Promise<void>;
+  handleClear: () => void;
+};
 
 export const useContactForm = (): ContactFormReturn => {
   const form = useForm<FormData>();
