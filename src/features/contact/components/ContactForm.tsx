@@ -15,31 +15,37 @@ function ContactForm() {
     <div className="w-full max-w-2xl p-6">
       <form onSubmit={handleSubmit(submitForm)}>
         <div>
-          <Input
-            label="お名前"
-            type="text"
-            id="name"
-            placeholder="お名前を入力してください"
-            {...register("name", formValidations["name"])}
-            error={errors["name"]}
-          />
+          <div className="mb-6">
+            <Input
+              label="お名前"
+              type="text"
+              id="name"
+              placeholder="お名前を入力してください"
+              {...register("name", formValidations["name"])}
+              error={errors["name"]}
+            />
+          </div>
 
-          <Input
-            label="メールアドレス"
-            type="email"
-            id="email"
-            placeholder="メールアドレスを入力してください"
-            {...register("email", formValidations["email"])}
-            error={errors["email"]}
-          />
+          <div className="mb-6">
+            <Input
+              label="メールアドレス"
+              type="email"
+              id="email"
+              placeholder="メールアドレスを入力してください"
+              {...register("email", formValidations["email"])}
+              error={errors["email"]}
+            />
+          </div>
 
-          <TextArea
-            label="本文"
-            id="message"
-            placeholder="本文を入力してください"
-            {...register("message", formValidations["message"])}
-            error={errors["message"]}
-          />
+          <div className="mb-6">
+            <TextArea
+              label="本文"
+              id="message"
+              placeholder="本文を入力してください"
+              {...register("message", formValidations["message"])}
+              error={errors["message"]}
+            />
+          </div>
         </div>
 
         <div className="flex space-x-4 justify-center mt-5">
