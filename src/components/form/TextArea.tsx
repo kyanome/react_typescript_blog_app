@@ -1,7 +1,11 @@
 import { TextAreaFieldProps } from "./types";
 import React from "react";
 
-const TextArea = ({ label, error, ...props }: TextAreaFieldProps) => {
+const TextArea: React.FC<TextAreaFieldProps> = ({
+  label,
+  error,
+  ...props
+}: TextAreaFieldProps) => {
   return (
     <div className="mb-6">
       <div className="flex">

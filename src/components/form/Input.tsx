@@ -1,6 +1,6 @@
 import { InputFieldProps } from "./types";
 
-const Input = ({ label, error, ...props }: InputFieldProps) => {
+const Input: React.FC<InputFieldProps> = ({ label, error, ...props }) => {
   return (
     <div className="mb-6">
       <div className="flex">
